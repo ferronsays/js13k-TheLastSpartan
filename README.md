@@ -2,7 +2,7 @@
 
 # The Last Spartan
 
-An entry for the 2020 js13k game development competition.
+Arcade hack n' slash survival game set in ancient Sparta, 404 B.C. An entry for the 2020 js13kgames competition -- themed "404."
 
 ## Description
 
