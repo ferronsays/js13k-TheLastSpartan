@@ -17,10 +17,10 @@ _For QWERTY keyboards_
 - Block - K or Right Mouse Button (RMB)
 - Jump - Space
 - Shield Bash - K + J / RMB + LMB
-- Slam - Space + J / Space + LMB
-- Pause - p
+- Ground Slam - Space + J / Space + LMB
+- Pause - P
 
-_Otherwise follow the onscreen promps_
+Otherwise, follow the onscreen prompts.
 
 Rest from battle to regain your health and stamina.
 
@@ -29,6 +29,8 @@ Use your shield bash and slam attacks to stun your enemies to gain the upper han
 ## Browser Support
 
 Chrome latest, Edge latest, Safari latest, FireFox latest
+
+For best results, use Chrome.
 
 ## Credits: 
 
