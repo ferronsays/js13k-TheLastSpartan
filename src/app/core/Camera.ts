@@ -87,7 +87,7 @@ export class Camera {
   //   var d = diff.len() - this.moveBoundsLen;
 
   //   if (d > 0) {
-  //     this._lookat.add(diff._normalize().scale(d));
+  //     this._lookat._add(diff._normalize().scale(d));
   //   }
 
   //   this._updateViewPort();

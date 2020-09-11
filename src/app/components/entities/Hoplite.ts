@@ -306,7 +306,7 @@ class Hoplite extends GameObject {
           this._altAttackAnim,
           this._attackAnim,
           this._specialAttackAnim,
-        ].includes(this._currentAnim) && !this._currentAnim.finished
+        ].includes(this._currentAnim) && !this._currentAnim._finished
       )
     ) {
       if (this._v._magnitude() > 0.1) {
@@ -430,7 +430,7 @@ class Hoplite extends GameObject {
 
       var bodyColor = colorOverride || "#E0AC69";
 
-      var anim = this._currentAnim.current;
+      var anim = this._currentAnim._current;
 
       ctx.s();
       ctx.lineWidth = 1;

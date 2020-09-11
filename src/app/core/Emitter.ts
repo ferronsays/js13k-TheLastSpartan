@@ -36,10 +36,6 @@ class Emitter extends GameObject {
 
   public _duration: number = -1;
 
-  // TODO remove, there are no perpetual emitters right now
-  // TODO tree leaves later maybe?
-  public _emissionOn: boolean = true;
-
   public _addToScene: boolean = false;
 
   public _particles: Particle[] = [];
@@ -67,12 +63,8 @@ class Emitter extends GameObject {
         this._particles.length < this._maxParticles &&
         this._emitCounter > rate
       ) {
-        if (this._emissionOn) {
           this.emit();
           this._emitCounter -= rate;
-        } else {
-          break;
-        }
       }
       this._elapsedTime += dt;
 

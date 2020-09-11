@@ -23,19 +23,19 @@ class SteeringManager {
   }
 
   _wander(strengthMod) {
-    this._force.add(this._bWander._run(strengthMod));
+    this._force._add(this._bWander._run(strengthMod));
   }
 
   _seek(target, strengthMod) {
-    this._force.add(this._bSeek._run(target, strengthMod));
+    this._force._add(this._bSeek._run(target, strengthMod));
   }
 
   _flee(target, strengthMod) {
-    this._force.add(this._bFlee._run(target, strengthMod));
+    this._force._add(this._bFlee._run(target, strengthMod));
   }
 
   _flock(strengthMod?) {
-    this._force.add(this._bFlock._run(strengthMod));
+    this._force._add(this._bFlock._run(strengthMod));
   }
 }
 

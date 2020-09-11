@@ -53,7 +53,7 @@ class _Game {
     this._$sr = document.getElementById("sr");
 
     // pause the game if the player gets distracted
-    // window.onblur = () => this.pause();
+    window.onblur = () => this._pause();
 
     window.onkeydown = (e) => {
       switch (e.code) {
@@ -137,8 +137,8 @@ class _Game {
       this._storage.getItem(_localStorageKey) || '{"kills": 0, "time": 0}'
     );
 
-    this._$kr.innerText = `Previous Record: ${highscore.kills}`;
-    this._$sr.innerText = `Previous Record: ${(highscore.time / 1000).toFixed(0)}s`;
+    this._$kr.innerText = `Record: ${highscore.kills}`;
+    this._$sr.innerText = `Record: ${(highscore.time / 1000).toFixed(0)}s`;
 
     if (kills > highscore.kills) {
       highscore.kills = kills;

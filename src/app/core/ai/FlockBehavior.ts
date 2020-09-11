@@ -35,8 +35,8 @@ class FlockBehavior extends Behavior {
 
     return (
       separation
-        // .add(alignment)
-        .add(cohesion)
+        // ._add(alignment)
+        ._add(cohesion)
     );
   }
 
@@ -51,7 +51,7 @@ class FlockBehavior extends Behavior {
     neighbors.forEach((boid: Hoplite) => {
       var d = V2._distance(this._actor._position, boid._position);
       if (d > 0 && d < this._config._neighborRadius) {
-        sum.add(boid._position);
+        sum._add(boid._position);
         count++;
       }
     });
@@ -73,7 +73,7 @@ class FlockBehavior extends Behavior {
     neighbors.forEach((boid: Hoplite) => {
       var d = V2._distance(this._actor._position, boid._position);
       if (d > 0 && d < this._config._desiredSeparation) {
-        mean.add(
+        mean._add(
           V2._subtract(this._actor._position, boid._position)
             ._normalize()
             ._scale(1 / d)

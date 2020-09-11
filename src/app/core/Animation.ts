@@ -60,11 +60,11 @@ class Animation {
     });
   }
 
-  get current() {
+  get _current() {
     return this._animations[this._currentFrame];
   }
 
-  get finished() {
+  get _finished() {
     if (this._repeats) {
       return false;
     }

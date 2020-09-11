@@ -30,7 +30,7 @@ class Cloth {
 
         if (x) {
           this._constraints.push(
-            new _DistanceConstraint(p, this._points[this._points.length - 1], 0.5)
+            new _DistanceConstraint(p, this._points[this._points.length - 1])
           );
         }
 
@@ -38,8 +38,7 @@ class Cloth {
           this._constraints.push(
             new _DistanceConstraint(
               p,
-              this._points[x + this._segsX * (y - 1)],
-              0.5
+              this._points[x + this._segsX * (y - 1)]
             )
           );
         }

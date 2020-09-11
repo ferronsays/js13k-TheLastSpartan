@@ -68,14 +68,14 @@ class GameObject extends GameNode {
       return;
     }
 
-    var tt = dt / 1000;
+    // var tt = dt / 1000;
 
     var previousPosition = this._position._copy();
 
-    this._a.add(this._steering._force._limit(this._maxForce));
+    this._a._add(this._steering._force._limit(this._maxForce));
 
-    this._v.add(this._a)._limit(this._maxSpeed * tt);
-    this._position.add(this._v);
+    this._v._add(this._a)._limit(this._maxSpeed * (dt / 1000));
+    this._position._add(this._v);
 
     this._a._reset();
     this._steering._force._reset();
@@ -88,7 +88,7 @@ class GameObject extends GameNode {
       this._rv = 0;
     }
 
-    this._calcSlide && this._slide(previousPosition, this._position);
+    this._calcSlide && this._slide(previousPosition);
 
     this._setYOff();
 
@@ -113,9 +113,9 @@ class GameObject extends GameNode {
     return V2._distance(this._position, Game._scene._player._position);
   }
 
-  _slide(curr, next) {
+  _slide(curr) {
     var currC = c2i(curr);
-    var nextC = c2i(next);
+    var nextC = c2i(this._position);
 
     // TODO performance measure
     var nTile = this._getTile(nextC._copy()._floor());
@@ -133,7 +133,7 @@ class GameObject extends GameNode {
     xVec.y = 0;
     var tile = this._getTile(V2._add(currC, xVec)._floor());
     if (tile && walkTile(tile._tileType)) {
-      newP.add(xVec);
+      newP._add(xVec);
     }
 
     // check y
@@ -141,7 +141,7 @@ class GameObject extends GameNode {
     yVec.x = 0;
     tile = this._getTile(V2._add(currC, yVec)._floor());
     if (tile && walkTile(tile._tileType)) {
-      newP.add(yVec);
+      newP._add(yVec);
     }
 
     this._position = i2c(newP);

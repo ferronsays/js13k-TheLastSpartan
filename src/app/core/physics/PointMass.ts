@@ -1,4 +1,3 @@
-
 import V2 from "../V2";
 
 class PointMass {
@@ -20,21 +19,29 @@ class PointMass {
   _update(delta) {
     if (this._fixed) return;
 
-    var x = this._position.x;
-    var y = this._position.y;
+    // var x = this._position.x;
+    // var y = this._position.y;
+    var pCopy = this._position._copy();
 
     this._a._scale(delta * delta);
 
     var fric = 0.015;
 
-    this._position.x = (2 - fric) * x - (1 - fric) * this._previousPosition.x + this._a.x;
-    this._position.y = (2 - fric) * y - (1 - fric) * this._previousPosition.y + this._a.y;
+    // this._position.x = (2 - fric) * x - (1 - fric) * this._previousPosition.x + this._a.x;
+    // this._position.y = (2 - fric) * y - (1 - fric) * this._previousPosition.y + this._a.y;
+
+    this._position
+      ._scale(2 - fric)
+      ._subtract(this._previousPosition._copy()._scale(1 - fric))
+      ._add(this._a);
 
     this._a._reset();
 
-    this._previousPosition.x = x;
-    this._previousPosition.y = y;
-  };
+    this._previousPosition = pCopy;
+
+    // this._previousPosition.x = x;
+    // this._previousPosition.y = y;
+  }
 
   // resolveConstraints() {
   //   var i = this.constraints.length;
@@ -67,15 +74,15 @@ class PointMass {
   // move(mV) {
   //   if (this._fixed) return;
 
-  //   this._position.add(mV);
+  //   this._position._add(mV);
   // }
 
   _addForce(fV) {
     // acceleration = (1/mass) * force
     // or
     // acceleration = force / mass
-    this._a.add(fV);
-  };
+    this._a._add(fV);
+  }
 
   // removeAllConstraints() {
   //   this.constraints = [];
@@ -100,6 +107,6 @@ class PointMass {
   //   ctx.fillStyle = "#000";
   //   ctx.fill();
   // };
-};
+}
 
 export default PointMass;

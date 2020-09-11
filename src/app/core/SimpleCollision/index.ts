@@ -63,7 +63,7 @@ export class CollisionRect extends GameObject {
 
   _update(dt) {
     super._update(dt);
-    this.p = this._object._position._copy().add(this._offset).add(new V2(0, -this._object._z));
+    this.p = this._object._position._copy()._add(this._offset)._add(new V2(0, -this._object._z));
   }
 
   // _draw(ctx) {

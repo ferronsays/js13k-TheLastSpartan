@@ -25,8 +25,8 @@ export var getRandomMapCoords = () => {
 class Spawner extends GameNode {
   public _totalSpawned : number = 0;
   public _maxEntitiesAtOnce: number = 40;
-  public _spawnDelay: number = 2000;
-  public _spawnDelayCounter: number = 0;
+  public _spawnDelay: number = 3000;
+  public _spawnDelayCounter: number = 3000;
 
   public _entities: Hoplite[] = [];
 

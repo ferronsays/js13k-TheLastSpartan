@@ -89,7 +89,7 @@ class V2 {
   //   var dVec = v._subtract(this);
   //   var m = dVec.len();
 
-  //   return this.add(dVec._normalize()._scale(t * m));
+  //   return this._add(dVec._normalize()._scale(t * m));
   // }
 
   // angle(v) {
@@ -116,7 +116,7 @@ class V2 {
     return this;
   }
 
-  add(v) {
+  _add(v) {
     this.x += v.x;
     this.y += v.y;
 

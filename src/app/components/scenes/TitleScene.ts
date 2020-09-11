@@ -6,8 +6,8 @@ class TitleScene extends Scene {
   constructor() {
     super();
 
-    this._cam._lookat = new V2(30, -22);
-    this._cam._targetDistance = this._cam._distance = 96;
+    this._cam._lookat = new V2(24, -22);
+    this._cam._targetDistance = this._cam._distance = 106;
 
     // TODO scene doesn't exist yet but needs to on the gameinstacne for some
     // of this to function. fix this

@@ -48,7 +48,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  padding: 42px;
+  padding: 24px;
 }
 
 #pz,
@@ -71,6 +71,7 @@ body {
 /* title */
 #t {
   font-size: 80px;
+  line-height: 60px;
   flex-grow: 1;
 }
 
@@ -94,6 +95,7 @@ body {
 #g {
   font-size: 72px;
   color: #fff;
+  margin: 0;
 }
 
 #i {
@@ -121,6 +123,13 @@ body {
   text-align: right;
   margin-bottom: 16px;
   font-family: monospace;
+}
+
+#z {
+  font-size: 12px;
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
 }
 
 /* .pls {

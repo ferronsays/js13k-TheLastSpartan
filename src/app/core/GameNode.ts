@@ -15,7 +15,7 @@ class GameNode {
     var parent = this._parent;
     while (parent) {
       pos = V2._rotateAroundOrigin(pos, parent._rotation)
-      pos.add(parent._position);
+      pos._add(parent._position);
       parent = parent._parent;
     }
 
