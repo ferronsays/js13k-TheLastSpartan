@@ -1,3 +1,5 @@
+![The Last Spartan](https://github.com/ferronsays/js13k-TheLastSpartan/blob/master/media/logo_small.png)
+
 # The Last Spartan
 
 An entry for the 2020 js13k game development competition.
